@@ -3,7 +3,7 @@
 set nocp "关闭vi兼容
 set shortmess=atI  "不帮助乌干达儿童了
 set noeb "关闭出错的提示声音
-set ambiwidth=double "避免“——”非常短，“★”显示不出来出来
+set ambiwidth=double "避免“——”非常短，“★”显示不出来
 set scrolloff=6 "保持到底部6行差距"
 set magic "除了$ . * ^之外都要反斜杠转义
 set ic "查找不分大小写
@@ -42,7 +42,7 @@ set is "实时搜索(没按回车就开始搜)
 set hls "搜索结果语法高亮，:noh关闭高亮
 
 "--断行设置
-" set tw=78 "78列就转行的强迫症
+" set tw=78 "78列就转行的强迫症 
 set lbr   "不允许单词这段
 set fo+=mB "m允许汉字断行，B将两行合并一行汉字不要加空格
 
@@ -73,11 +73,28 @@ filetype plugin indent on "补全前提
 set wildmenu   "命令模式用 Tab 补全单行菜单形式显示
 set completeopt=longest,menu "只在补全下拉菜单中显示
 " ActivateAddons vim-snippets snipmate
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:snipMate = {}
+let g:snipMate.scope_aliases = {}
+let g:snipMate.scope_aliases['ruby'] = 'ruby,ruby-rails,ruby-1.9'
 
 "--鼠标(建议不要用)
 " set mouse=nv "在n(ormal),v(isual),i(nsert),h(elp)模式下使用鼠标。
+
+"NEARDTree"
+map <F4> :NERDTreeToggle<CR>
+map <F3> :set nu!<CR>
+imap <F4> <ESC> :NERDTreeToggle<CR>
+let NERDTreeIgnore=['\.pyc']
+
+"git gutter"
+nmap <F7> :GitGutterSignsToggle<CR>
+let g:gitgutter_signs = 0
+nmap ]h <Plug>GitGutterNextHunk
+nmap [h <Plug>GitGutterPrevHunk
+
 "------------node配置"
-set runtimepath^=~/.vim/bundle/node
+set runtimepath^=~/.vim/bundle/node 
 "------------F5执行
 map <F5> :call CompileRunGcc()<CR>
 "autocmd FileType tex map <F6> :!pdflatex %<CR>
@@ -90,8 +107,8 @@ func! CompileRunGcc()
   elseif &filetype == 'cpp'
     exec "!g++ % -o %<"
     exec "!time ./%<"
-  elseif &filetype == 'java'
-    exec "!javac %"
+  elseif &filetype == 'java' 
+    exec "!javac %" 
     exec "!time java %<"
   elseif &filetype == 'sh'
     :!time bash %
@@ -105,7 +122,7 @@ func! CompileRunGcc()
     elseif &filetype == 'mkd'
         exec "!~/.vim/markdown.pl % > %.html &"
         exec "!firefox %.html &"
-    elseif &filetype == 'tex'
+    elseif &filetype == 'tex' 
         exec "!evince %<.pdf "
     elseif &filetype == 'plaintex'
         exec "!evince %<.pdf "
@@ -141,4 +158,8 @@ map <S-Right> :tabn<CR>
 
 "--  C-i 代替Esc
 imap <C-i> <ESC>
-
+"-- ememt的键位
+let user_emmet_expandabbr_key = '<C-y>i'
+let user_emmet_togglecomment_key = '<C-y>-'
+let user_emmet_imagesize_key = '<C-y>p'
+"autocmd FileType javascript setlocal omnifunc=tern#Complete 
