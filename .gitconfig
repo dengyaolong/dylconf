@@ -1,0 +1,7 @@
+[user]
+  email = dengyaolong@meituan.com
+  name = dyl
+[push]
+  default = simple
+[color]
+  ui = true
