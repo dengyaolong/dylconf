@@ -4,4 +4,8 @@
 [push]
   default = simple
 [color]
+  branch = auto
+  diff = auto
+  status = auto
+  showbranch =auto
   ui = true
