@@ -68,18 +68,52 @@ set background=dark
 let g:solarized_termcolors=256
 
 "--补全
-call pathogen#infect() " 启用bundle
+set dictionary+=/path/to/es6.dict
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-fugitive'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+Bundle 'justinj/vim-react-snippets'
+Plugin 'marijnh/tern_for_vim'
+" Plugin 'othree/vim-autocomplpop'
+" let g:AutoComplPopDontSelectFirst = 1
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
+Plugin 'tpope/vim-markdown'
+Plugin 'bling/vim-airline'
+Plugin 'ervandew/supertab'
+let g:SuperTabRetainCompletionType=2
+let g:SuperTabDefaultCompletionType="<C-X><C-O>"
+" let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+" let g:SuperTabContextDefaultCompletionType = "<c-n>"
+Bundle 'moll/vim-node'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'othree/html5.vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+Plugin 'maksimr/vim-jsbeautify'
+Plugin 'einars/js-beautify'
+Plugin 'L9'
+Plugin 'FuzzyFinder'
+call vundle#end()
 filetype plugin indent on "补全前提
 set wildmenu   "命令模式用 Tab 补全单行菜单形式显示
 set completeopt=longest,menu "只在补全下拉菜单中显示
-" ActivateAddons vim-snippets snipmate
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:snipMate = {}
-let g:snipMate.scope_aliases = {}
-let g:snipMate.scope_aliases['ruby'] = 'ruby,ruby-rails,ruby-1.9'
-
+let g:UltiSnipsExpandTrigger="<c-tab>"
 "--鼠标(建议不要用)
 " set mouse=nv "在n(ormal),v(isual),i(nsert),h(elp)模式下使用鼠标。
+
+"--tern_for_vim
+" let tern_show_signature_in_pum = 1
+" let tern_show_argument_hints = 'on_hold'
+" autocmd FileType javascript nnoremap <leader>d :TernDef<CR>
+" autocmd FileType javascript setlocal omnifunc=tern#Complete
 
 "NEARDTree"
 map <F4> :NERDTreeToggle<CR>
@@ -87,11 +121,6 @@ map <F3> :set nu!<CR>
 imap <F4> <ESC> :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\.pyc']
 
-"git gutter"
-nmap <F7> :GitGutterSignsToggle<CR>
-let g:gitgutter_signs = 0
-nmap ]h <Plug>GitGutterNextHunk
-nmap [h <Plug>GitGutterPrevHunk
 
 "------------node配置"
 set runtimepath^=~/.vim/bundle/node 
