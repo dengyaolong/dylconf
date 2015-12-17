@@ -110,10 +110,10 @@ let g:UltiSnipsExpandTrigger="<c-tab>"
 " set mouse=nv "在n(ormal),v(isual),i(nsert),h(elp)模式下使用鼠标。
 
 "--tern_for_vim
-" let tern_show_signature_in_pum = 1
-" let tern_show_argument_hints = 'on_hold'
-" autocmd FileType javascript nnoremap <leader>d :TernDef<CR>
-" autocmd FileType javascript setlocal omnifunc=tern#Complete
+let tern_show_signature_in_pum = 1
+let tern_show_argument_hints = 'on_hold'
+autocmd FileType javascript nnoremap <leader>d :TernDef<CR>
+autocmd FileType javascript setlocal omnifunc=tern#Complete
 
 "NEARDTree"
 map <F4> :NERDTreeToggle<CR>
