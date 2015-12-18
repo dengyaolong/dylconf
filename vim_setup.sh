@@ -6,7 +6,7 @@ mv -f ~/.vim ~/.vim_old
 cd ~/ && mkdir .vim
 cd ~/.vim && mkdir bundle
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-
+vim +PluginInstall! +qall
 #配置tern for vim
 cd ~/dylconf 
 sh node_setup.sh
