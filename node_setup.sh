@@ -18,4 +18,5 @@ export NVM_DIR="$HOME/.nvm"
 NVM
 }
 
-nvm >> ~/.bashrc
+nvm >> ~/.bashrc 
+source ~/.bashrc
