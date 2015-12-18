@@ -82,16 +82,15 @@ Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Bundle 'justinj/vim-react-snippets'
 Plugin 'marijnh/tern_for_vim'
-" Plugin 'othree/vim-autocomplpop'
-" let g:AutoComplPopDontSelectFirst = 1
+Plugin 'othree/vim-autocomplpop'
+let g:AutoComplPopDontSelectFirst = 1
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
 Plugin 'tpope/vim-markdown'
 Plugin 'bling/vim-airline'
 Plugin 'ervandew/supertab'
 let g:SuperTabRetainCompletionType=2
 let g:SuperTabDefaultCompletionType="<C-X><C-O>"
-" let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
-" let g:SuperTabContextDefaultCompletionType = "<c-n>"
+let g:SuperTabContextDefaultCompletionType = "<c-n>"
 Bundle 'moll/vim-node'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'othree/html5.vim'
