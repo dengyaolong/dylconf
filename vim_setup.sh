@@ -9,6 +9,6 @@ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall! +qall
 #配置tern for vim
 cd ~/dylconf 
-sh node_setup.sh
+. node_setup.sh
 cd ~/.vim/bundle/tern_for_vim/
 npm install
