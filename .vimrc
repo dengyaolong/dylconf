@@ -190,4 +190,4 @@ imap <C-i> <ESC>
 let user_emmet_expandabbr_key = '<C-y>i'
 let user_emmet_togglecomment_key = '<C-y>-'
 let user_emmet_imagesize_key = '<C-y>p'
-"autocmd FileType javascript setlocal omnifunc=tern#Complete 
+autocmd FileType javascript setlocal omnifunc=tern#Complete 
